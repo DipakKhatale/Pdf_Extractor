@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Autofill Test</title>
+</head>
+<body>
+  <h2>Autofill Resume Data</h2>
+  {% for person in data %}
+  <form action="/submit" method="post" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+    <label>Name:</label><input type="text" name="name" value="{{ person['Name'] }}"><br><br>
+    <label>Email:</label><input type="text" name="email" value="{{ person['Email'] }}"><br><br>
+    <label>Mobile:</label><input type="text" name="mobile" value="{{ person['Mobile'] }}"><br><br>
+    <label>Education:</label><input type="text" name="education" value="{{ person['Education'] }}"><br><br>
+    <label>Experience:</label><input type="text" name="experience" value="{{ person['Experience'] }}"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  {% endfor %}
+</body>
+</html>
